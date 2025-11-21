@@ -1,0 +1,63 @@
+.servicios-section {
+  background-color: #f8f9fa;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #212529;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  height: 100%;
+  border-bottom: 4px solid transparent; 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.icon-box {
+  color: #d32f2f;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card-title {
+  font-weight: 700;
+  color: #444;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 15px 30px rgba(211, 47, 47, 0.15) !important;
+  border-bottom-color: #d32f2f; 
+}
+
+.service-card:hover .icon-box {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.service-card:hover .card-title {
+  color: #d32f2f;
+}
+
+@media (min-width: 1400px) {
+  .container-fluid {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}

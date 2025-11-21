@@ -1,0 +1,36 @@
+<header class="header fixed-top" [class.scrolled]="isScrolled">
+  <nav class="container d-flex justify-content-between align-items-center py-3">
+    
+    <a href="#" class="logo text-decoration-none fs-3">
+      <span class="text-danger">M&M</span> Imprenta
+    </a>
+
+    <button class="menu-toggle d-md-none" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="d-none d-md-flex list-unstyled gap-4 m-0 align-items-center">
+      <li><a href="#home" class="nav-link">Inicio</a></li>
+      <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      <li><a href="#nosotros" class="nav-link">Sobre nosotros</a></li>
+      <li><a href="#portfolio" class="nav-link">Trabajos</a></li>
+      <li><a href="#cotizacion" class="btn btn-danger text-white px-4 rounded-pill">Pedir Presupuesto</a></li>
+    </ul>
+  </nav>
+
+  <div class="side-menu" [class.open]="isMenuOpen">
+     <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+        <span class="fw-bold text-dark">Menú</span>
+        <button class="close-btn text-dark" (click)="toggleMenu()"><i class="fas fa-times"></i></button>
+      </div>
+      <ul class="list-unstyled p-3">
+        <li class="mb-3"><a href="#home" (click)="closeMenu()" class="d-block text-dark text-decoration-none fs-5">Inicio</a></li>
+        <li class="mb-3"><a href="#servicios" (click)="closeMenu()" class="d-block text-dark text-decoration-none fs-5">Servicios</a></li>
+        <li class="mb-3"><a href="#nosotros" (click)="closeMenu()" class="d-block text-dark text-decoration-none fs-5">Sobre nosotros</a></li>
+        <li class="mb-3"><a href="#portfolio" (click)="closeMenu()" class="d-block text-dark text-decoration-none fs-5">Trabajos</a></li>
+        <li class="mt-4"><a href="#cotizacion" (click)="closeMenu()" class="btn btn-danger w-100">Solicitar Presupuesto</a></li>
+      </ul>
+  </div>
+
+  <div class="overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+</header>

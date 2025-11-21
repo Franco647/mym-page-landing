@@ -1,0 +1,50 @@
+<section id="portfolio" class="py-5 bg-white">
+  <div class="container" data-aos="fade-up">
+    
+    <div class="text-center mb-5">
+      <h2 class="text-uppercase fw-bold">Trabajos <span class="text-danger">Realizados</span></h2>
+      <p class="text-muted">Calidad y detalle en cada impresión.</p>
+    </div>
+
+    <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+      <button class="btn btn-filter rounded-pill px-4" 
+              [class.active]="activeCategory === 'todos'" 
+              (click)="setCategory('todos')">Todos</button>
+      
+      <button class="btn btn-filter rounded-pill px-4" 
+              [class.active]="activeCategory === 'papeleria'" 
+              (click)="setCategory('papeleria')">Papelería</button>
+      
+      <button class="btn btn-filter rounded-pill px-4" 
+              [class.active]="activeCategory === 'etiquetas'" 
+              (click)="setCategory('etiquetas')">Stickers & Tags</button>
+      
+      <button class="btn btn-filter rounded-pill px-4" 
+              [class.active]="activeCategory === 'gran-formato'" 
+              (click)="setCategory('gran-formato')">Gran Formato</button>
+
+      <button class="btn btn-filter rounded-pill px-4" 
+              [class.active]="activeCategory === 'merchandising'" 
+              (click)="setCategory('merchandising')">Merchandising</button>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let item of filteredItems; let i = index" data-aos="zoom-in" [attr.data-aos-delay]="i * 50">
+        
+        <div class="portfolio-item position-relative overflow-hidden rounded shadow-sm">
+          <img [src]="item.url" [alt]="item.title" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
+
+          <div class="portfolio-overlay d-flex align-items-center justify-content-center text-center">
+            <div class="content p-3">
+              <h5 class="text-white fw-bold mb-0">{{ item.title }}</h5>
+              <span class="badge bg-danger mt-2 text-uppercase small">{{ item.category.replace('-', ' ') }}</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

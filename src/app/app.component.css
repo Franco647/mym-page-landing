@@ -1,0 +1,23 @@
+.card {
+  @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 text-center;
+}
+
+.input {
+  @apply w-full p-3 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-red-300;
+}
+
+.icon {
+  @apply text-4xl w-16 h-16 mx-auto flex items-center justify-center rounded-full;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  body::-webkit-scrollbar { 
+    display: none;
+  }
+}
